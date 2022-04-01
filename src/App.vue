@@ -1,32 +1,57 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <Navbar />
+    <div class="container">
+      <div class="row">
+        <div class="col"
+        v-for="personagem in personagens"
+        :key="personagem.id">
+          <Card
+            :personagem="personagem"/>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+<script>
+import Navbar from "@/components/Navbar.vue";
+import Card from "@/components/Card.vue";
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+export default {
+  name: "App",
+  components: {
+    Navbar,
+    Card,
+  },
+  data() {
+    return {
+      personagens: [
+        {
+          id: 1,
+          name: 'Hulk,',
+          about: 'Esmaga e cresce.... Birlll!',
+          photo: 'https://upload.wikimedia.org/wikipedia/pt/9/91/Bruce_Banner.jpg',
+        },
+        {
+          id: 2,
+          name: 'Homem de Ferro,',
+          about: 'Jarvis, faça algo',
+          photo: 'https://www.imagensempng.com.br/wp-content/uploads/2021/08/03.png'
+        },
+        {
+          id: 3,
+          name: 'Thor,',
+          about: 'Me dê o meu martelo...',
+          photo: 'https://i.pinimg.com/originals/5b/eb/f1/5bebf147723add0dec80991da354c031.png',
+        },
+      ]
+    }
+  }
+};
+</script>
+<style scoped>
+/* .cards{
+  display: flex;
+  flex-direction: row;
+} */
 </style>
