@@ -1,14 +1,12 @@
 <template>
   <div class="card" style="width: 18rem">
-    <img :src="personagem.photo"
-    class="card-img-top"
-    alt="Hulk Esmaga" />
+    <img :src="marvel.photo" class="card-img-top" />
     <div class="card-body">
       <h5 class="card-title">
-        {{ personagem.name }}
+        {{ marvel.name }}
       </h5>
       <p class="card-text">
-        {{ personagem.about }}
+        {{ marvel.about }}
       </p>
       <a href="#" class="btn btn-primary"> Preview </a>
     </div>
@@ -18,7 +16,7 @@
 export default {
   name: "Card",
   props: {
-    personagem: {
+    marvel: {
       type: Array,
       required: true,
     },
@@ -26,12 +24,17 @@ export default {
 };
 </script>
 <style scoped>
-/* .card {
-  padding: 10px;
+img {
+  max-height: 450px;
+  min-height: 450px;
+}
+.card {
+  margin-bottom: 3rem;
+  /* padding: 10px;
   background-color: #eee;
   border: 1px solid #999;
   display: flex;
   justify-content: center;
-  align-items: center;
-} */
+  align-items: center; */
+}
 </style>
