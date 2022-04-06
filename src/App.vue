@@ -1,24 +1,38 @@
 <template>
   <div id="app">
     <Navbar />
+    <router-view />
+    <!-- <Navbar />
     <div class="container">
       <div class="row">
-        <div class="col" v-for="marvel in personagensMarvel" :key="marvel.id">
+        <div
+          class="col d-flex justify-content-center"
+          v-for="marvel in personagensMarvel"
+          :key="marvel.id"
+        >
           <card-marvel :marvel="marvel" />
         </div>
       </div>
       <div class="row">
-        <div class="col" v-for="dc in personagensDc" :key="dc.id">
+        <div
+          class="col d-flex justify-content-center"
+          v-for="dc in personagensDc"
+          :key="dc.id"
+        >
           <card-dc :dc="dc" />
         </div>
       </div>
     </div>
+    <div class="container">
+      <Form />
+    </div> -->
   </div>
 </template>
 <script>
 import Navbar from "@/components/Navbar.vue";
 import CardMarvel from "@/components/CardMarvel.vue";
 import CardDc from "@/components/CardDc.vue";
+import Form from "@/components/Form.vue";
 
 export default {
   name: "App",
@@ -26,6 +40,7 @@ export default {
     Navbar,
     CardMarvel,
     CardDc,
+    Form,
   },
   data() {
     return {
