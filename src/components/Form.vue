@@ -49,6 +49,12 @@
       </div>
     </div>
     <div class="row justify-content-center">
+      <div class="col-8 d-flex justify-content-between">
+        <button type="button" class="btn btn-primary">Salvar</button>
+        <button type="button" class="btn btn-secondary">Cancelar</button>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
       <div class="col-8">
         <p>Nome do personagem: {{ name }}</p>
         <p>Descrição do personagem: {{ description }}</p>
