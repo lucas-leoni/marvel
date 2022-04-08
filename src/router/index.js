@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import NovoPersonagem from "@/views/NovoPersonagem.vue";
+import PersonagemProfile from "@/views/personagem/Profile.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
     path: "/novo-personagem",
     name: "novo-personagem",
     component: NovoPersonagem,
+  },
+  {
+    path: "/profile/:id",
+    name: "PersonagemProfile",
+    component: PersonagemProfile,
   },
 ];
 

@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-4">
+      <div class="col-8">
         <div class="row mb-3">
           <label for="name"
             >Nome
@@ -17,6 +17,21 @@
               class="form-control mt-2"
               v-model="name"
               placeholder="Informe o nome do personagem"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <div class="row mb-3">
+          <label for="image"
+            >Categoria
+            <input
+              type="text"
+              class="form-control mt-2"
+              v-model="category"
+              placeholder="Informe a categoria do personagem"
             />
           </label>
         </div>
@@ -57,6 +72,7 @@
     <div class="row justify-content-center mt-4">
       <div class="col-8">
         <p>Nome do personagem: {{ name }}</p>
+        <p>Categoria do personagem: {{ category }}</p>
         <p>Descrição do personagem: {{ description }}</p>
       </div>
     </div>
@@ -68,6 +84,7 @@ export default {
   data() {
     return {
       name: "",
+      category: "",
       description: "",
     };
   },

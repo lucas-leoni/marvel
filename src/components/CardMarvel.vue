@@ -9,6 +9,7 @@
         {{ marvel.about }}
       </p>
       <a href="#" class="btn btn-primary"> Preview </a>
+      <span class="badge bg-warning text-dark">Warning</span>
     </div>
   </div>
 </template>
