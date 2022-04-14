@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import NovoPersonagem from "@/views/NovoPersonagem.vue";
 import PersonagemProfile from "@/views/personagem/Profile.vue";
+import PersonagemFeminino from "@/views/personagem/Women.vue";
+import PersonagemMasculino from "@/views/personagem/Man.vue";
 
 Vue.use(VueRouter);
 
@@ -14,13 +16,23 @@ const routes = [
   },
   {
     path: "/novo-personagem",
-    name: "novo-personagem",
+    name: "NovoPersonagem",
     component: NovoPersonagem,
   },
   {
-    path: "/profile/:id",
+    path: "/personagem/:id",
     name: "PersonagemProfile",
     component: PersonagemProfile,
+  },
+  {
+    path: "/women",
+    name: "PersonagemFeminino",
+    component: PersonagemFeminino,
+  },
+  {
+    path: "/man",
+    name: "PersonagemMasculino",
+    component: PersonagemMasculino,
   },
 ];
 
