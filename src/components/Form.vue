@@ -107,14 +107,6 @@
         </button>
       </div>
     </div>
-    <div class="row justify-content-center mt-4">
-      <div class="col-8">
-        <p>Nome do personagem: {{ name }}</p>
-        <p>Franquia do personagem: {{ franquia }}</p>
-        <p>Sexo do personagem: {{ sexo }}</p>
-        <p>Descrição do personagem: {{ description }}</p>
-      </div>
-    </div>
   </div>
 </template>
 <script>

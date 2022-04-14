@@ -1,8 +1,8 @@
 <template>
   <div class="d-flex">
-    <div v-if="exibir" class="card mb-5 mr-1" style="width: 18rem">
+    <div v-if="exibirPersonagens" class="card mb-5 mr-1" style="width: 18rem">
       <img :src="personagem.photo" class="card-img-top" />
-      <div class="card-body">
+      <div class="card-body d-flex flex-column justify-content-evenly">
         <h5 class="card-title">
           {{ personagem.name }}
         </h5>
@@ -44,7 +44,7 @@ export default {
     },
   },
   computed: {
-    exibir() {
+    exibirPersonagens() {
       return (
         this.$route.name === "home" ||
         this.$route.name === "PersonagemFeminino" ||
