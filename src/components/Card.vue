@@ -1,30 +1,36 @@
 <template>
-  <div class="card mb-5 mr-1" style="width: 18rem">
-    <img :src="personagem.photo" class="card-img-top" />
-    <div class="card-body">
-      <h5 class="card-title">
-        {{ personagem.name }}
-      </h5>
-      <p class="card-text">
-        {{ personagem.description }}
-      </p>
-      <div class="row justify-content-between">
-        <div class="col-5">
-          <a class="btn btn-primary">
-            <router-link
-              class="text-light text-decoration-none"
-              v-bind:to="url()"
-            >
-              Preview
-            </router-link>
-          </a>
-        </div>
-        <div class="col-4 d-flex align-items-center justify-content-end">
-          <span class="badge bg-warning text-dark">
-            {{ personagem.franquia }}
-          </span>
+  <div class="d-flex">
+    <div v-if="exibir" class="card mb-5 mr-1" style="width: 18rem">
+      <img :src="personagem.photo" class="card-img-top" />
+      <div class="card-body">
+        <h5 class="card-title">
+          {{ personagem.name }}
+        </h5>
+        <p class="card-text">
+          {{ personagem.description }}
+        </p>
+        <div class="row justify-content-between">
+          <div class="col-5">
+            <a class="btn btn-primary">
+              <router-link
+                class="text-light text-decoration-none"
+                v-bind:to="url()"
+              >
+                Preview
+              </router-link>
+            </a>
+          </div>
+          <div class="col-4 d-flex align-items-center justify-content-end">
+            <span class="badge bg-warning text-dark">
+              {{ personagem.franquia }}
+            </span>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div v-if="exibirProfile">
+      <h1>Profile</h1>
     </div>
   </div>
 </template>
@@ -35,6 +41,18 @@ export default {
     personagem: {
       type: Object,
       required: true,
+    },
+  },
+  computed: {
+    exibir() {
+      return (
+        this.$route.name === "home" ||
+        this.$route.name === "PersonagemFeminino" ||
+        this.$route.name === "PersonagemMasculino"
+      );
+    },
+    exibirProfile() {
+      return this.$route.name === "PersonagemProfile";
     },
   },
   methods: {
